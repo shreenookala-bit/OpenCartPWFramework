@@ -18,7 +18,7 @@ jobs:
     
      -name: Setup Node.js
       uses:actions/setup-node@v4
-      with:
+      with
         node-version:20
      -name: Install dependencies
       run:npm ci
@@ -27,7 +27,7 @@ jobs:
      
      -name: Run tests
       run:npx playwright test --project=chromium
-      env:
+      env
         ENV:qa
         BASE_URL:${{ secrets.BASE_URL}}
         APPUSERNAME:${{ secrets.APPUSERNAME}}
@@ -38,7 +38,7 @@ jobs:
      -name: Upload HTML Report
         if:always{}
         uses:actions/upload-artifact@v4
-        with:
+        with
          name:playwright-html-report
          path:report/html-report/
          retention-days:30
@@ -46,7 +46,7 @@ jobs:
      -name: Upload Allure Results
        if:always{}
        uses:actions/upload-artifact@v4
-       with:
+       with
          name:allure-results
          path:allure-results/
          retention-days:30
