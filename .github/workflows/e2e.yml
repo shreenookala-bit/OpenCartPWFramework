@@ -76,7 +76,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: shreenookala-bit/OpenCartPWFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -161,7 +161,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: shreenookala-bit/OpenCartPWFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -246,7 +246,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: shreenookala-bit/OpenCartPWFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -332,7 +332,7 @@ jobs:
       - name: Checkout QA repo
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIFramework
+          repository: shreenookala-bit/OpenCartPWFramework
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -432,7 +432,7 @@ jobs:
             echo "overall=❌ SOME FAILURES" >> $GITHUB_OUTPUT
           fi
 
-          REPORT_BASE="https://naveenanimation20.github.io/OpenCartWebAPIFramework/runs/${{ github.run_id }}"
+          REPORT_BASE="https://shreenookala-bit.github.io/OpenCartPWFramework/runs/${{ github.run_id }}"
           echo "report_url=${REPORT_BASE}" >> $GITHUB_OUTPUT
 
       - name: Download All Reports
@@ -603,7 +603,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "🎭 CI/CD Pipeline — ${{ steps.status.outputs.overall }} — ${{ github.ref_name }}"
-          to: naveenanimation20@gmail.com,training@naveenautomationlabs.com,nkt.agarwal3@gmail.com,kdpatel8184@gmail.com
+          to: training@naveenautomationlabs.com,shree.nookala@gmail.com
           from: "CI Bot <${{ secrets.EMAIL_USERNAME }}>"
           html_body: file://dashboard.html
 
