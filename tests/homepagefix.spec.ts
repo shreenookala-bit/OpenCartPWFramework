@@ -7,17 +7,17 @@ test.beforeEach(async({loginpage})=>{
 
 });
 
-test('home page title test',async({homepage})=>{
+test('@smoke home page title test',async({homepage})=>{
     const pagetitle= await homepage.getPageTitle();
     console.log('Home page title', pagetitle);
     expect(pagetitle).toBe('My Account');
 });
 
-test('logout link exist test',async({homepage})=>{
+test('@smoke logout link exist test',async({homepage})=>{
     expect(await homepage.isLogoutlinkexist()).toBeTruthy();
 });
 
-test('Home page headers exist',async({homepage})=>{
+test('@smoke Home page headers exist',async({homepage})=>{
     let allheaders= await homepage.getHomepageHeaders();
     console.log('Home page headers:',allheaders);
     expect(allheaders).toHaveLength(4);
