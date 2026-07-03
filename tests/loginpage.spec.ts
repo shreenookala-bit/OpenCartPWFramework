@@ -11,7 +11,7 @@ import { Homepage } from '../src/pages/Homepage';
 
  });
 
-test('login page title test',async()=>{
+test('@smoke login page title test',async()=>{
      const pagetitle = await loginpage.getLoginpagetitle();
      console.log('Login page Title :',pagetitle);
      expect(pagetitle).toBe('Account Login');

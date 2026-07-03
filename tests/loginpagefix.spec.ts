@@ -11,7 +11,7 @@ import { JsonHelper } from '../src/utils/JsonHelper';
      
  });
 
-test('login page title test',async({loginpage})=>{
+test('@smoke login page title test',async({loginpage})=>{
      const pagetitle = await loginpage.getPageTitle();
      console.log('Login page Title :',pagetitle);
      expect(pagetitle).toBe('Account Login');
