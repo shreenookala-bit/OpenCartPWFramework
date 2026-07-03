@@ -56,8 +56,8 @@ jobs:
       - name: Run tests
         run: npx playwright test --project=chromium --grep @smoke
         env:
-          ENV: qa
-          #ENV: ${{ github.event.inputs.environment || 'QA' }}
+        
+          ENV: ${{ github.event.inputs.environment || 'QA' }}
           BASE_URL: ${{ secrets.BASE_URL }}
           USERNAME: ${{ secrets.APPUSERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
