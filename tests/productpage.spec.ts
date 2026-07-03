@@ -7,15 +7,15 @@ test.beforeEach(async({loginpage})=>{
     await loginpage.dologin(process.env.APPUSERNAME!, process.env.PASSWORD!);
 });
 
-test('Comp logo exist on product page',async({basepage})=> {
+test('@smoke Comp logo exist on product page',async({basepage})=> {
      //expect(await productinfopage.islogoVisible()).toBeTruthy();
      expect(await basepage.islogoVisible()).toBeTruthy();
 });
 
-test('Footer exist on product page',async({basepage})=> {
+test('@smoke Footer exist on product page',async({basepage})=> {
      expect(await basepage.isFootersCount()).toBe(16);
 })
-test('verify product image count',async({homepage,searchresultpage,productinfopage})=> {
+test('@smoke verify product image count',async({homepage,searchresultpage,productinfopage})=> {
      await homepage.doSearch('macbook');
      await searchresultpage.selectproduct('MacBook Pro');
      let imgcount= await productinfopage.getProductImagecount();
@@ -23,7 +23,7 @@ test('verify product image count',async({homepage,searchresultpage,productinfopa
      expect(imgcount).toBe(4);
 });
 
-test('verify product information/data',async({homepage, searchresultpage,productinfopage})=> {
+test('@smoke verify product information/data',async({homepage, searchresultpage,productinfopage})=> {
      await homepage.doSearch('macbook');
      await searchresultpage.selectproduct('MacBook Pro');
      let actualProductInfoMap= await productinfopage.getProductInfo();
