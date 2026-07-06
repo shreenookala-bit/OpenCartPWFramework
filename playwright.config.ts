@@ -7,13 +7,10 @@ dotenv.config({path:`config/.env.${ENV}`});
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
+  retries: 2,
   workers: process.env.CI ? '50%': undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  
   reporter: [
     ["list"],
     ["html", { outputFolder: "reports/html-report", open: "never" }],
@@ -21,15 +18,13 @@ export default defineConfig({
         outputFolder: "allure-results",
     }],
 ],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
      baseURL: process.env.BASE_URL,
-     screenshot:'off',
-     headless:false,
+     headless: false,
      screenshot:'only-on-failure',
      video:'off',
-    trace: 'on-first-retry',
-    headless: !process.env.CI ? false : true,
+     trace: 'on-first-retry',
+     headless: !process.env.CI ? false : true,
   
   },
 
