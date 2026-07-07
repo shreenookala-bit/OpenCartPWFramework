@@ -12,7 +12,7 @@ test('@smoke Comp logo exist on product page',async({basepage})=> {
      expect(await basepage.islogoVisible()).toBeTruthy();
 });
 
-test('Footer exist on product page',async({basepage})=> {
+test('@smoke Footer exist on product page',async({basepage})=> {
      expect(await basepage.isFootersCount()).toBe(16);
 })
 test('@smoke verify product image count',async({homepage,searchresultpage,productinfopage})=> {
