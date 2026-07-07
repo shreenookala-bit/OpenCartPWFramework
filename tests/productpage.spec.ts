@@ -3,8 +3,8 @@ import { ProductInfoPage } from '../src/pages/ProductInfoPage';
 
 test.beforeEach(async({loginpage})=>{
     await loginpage.goToLoginpage();
-    await loginpage.dologin('lakshmi.nookala@gmail.com','12345678');
-    //await loginpage.dologin(process.env.APPUSERNAME!, process.env.PASSWORD!);
+    //await loginpage.dologin('lakshmi.nookala@gmail.com','12345678');
+    await loginpage.dologin(process.env.APPUSERNAME!, process.env.PASSWORD!);
 });
 
 test('@smoke Comp logo exist on product page',async({basepage})=> {
@@ -37,7 +37,7 @@ test('@smoke verify product information/data',async({homepage, searchresultpage,
       
 });
 
-test('@smoke verify product is added to cart',async({homepage,searchresultpage,productinfopage})=> {
+test('verify product is added to cart',async({homepage,searchresultpage,productinfopage})=> {
      await homepage.doSearch('macbook');
      await searchresultpage.selectproduct('MacBook Pro');
      await productinfopage.getQuantity(2);
