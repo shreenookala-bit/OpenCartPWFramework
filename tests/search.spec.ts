@@ -11,7 +11,7 @@ test('verify search result count',async({homepage, searchresultpage})=> {
      expect(await searchresultpage.getProductSearchResultsCount()).toBe(3);
 });
 
-test('verify user is land on product page',async({homepage, searchresultpage,page})=> {
+test('@smoke verify user is land on product page',async({homepage, searchresultpage,page})=> {
      await homepage.doSearch('macbook');
      await searchresultpage.selectproduct('MacBook Pro');
      expect(await page.title()).toBe('MacBook Pro'); 
